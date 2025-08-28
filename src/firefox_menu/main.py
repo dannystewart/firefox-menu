@@ -6,6 +6,7 @@ the version included alongside this script, to customize the context menu by hid
 
 from __future__ import annotations
 
+import platform
 import shutil
 import sys
 from pathlib import Path
@@ -91,7 +92,8 @@ def main() -> None:
         logger.info("\nInstallation completed successfully!")
         logger.debug("\nMake sure you also set the necessary about:config values:")
         logger.debug("  - toolkit.legacyUserProfileCustomizations.stylesheets = true")
-        logger.debug("  - widget.macos.native-context-menus = false")
+        if platform.system() == "Darwin":
+            logger.debug("  - widget.macos.native-context-menus = false")
         return
 
     logger.error("Installation failed!")
