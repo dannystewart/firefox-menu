@@ -12,7 +12,7 @@ from pathlib import Path
 
 from polykit import PolyLog
 
-logger = PolyLog.get_logger()
+logger = PolyLog.get_logger(level="debug", simple=True)
 
 
 def find_firefox_profile() -> Path | None:
@@ -61,7 +61,7 @@ def install_css(profile_dir: Path, source_css: Path) -> bool:
 
     try:  # Copy the source file to the target location
         shutil.copy2(source_css, target_css)
-        logger.info("Successfully installed userChrome.css to: %s", target_css)
+        logger.debug("Successfully installed to: %s", target_css)
         return True
     except Exception as e:
         logger.error("Error installing userChrome.css: %s", e)
@@ -84,14 +84,14 @@ def main() -> None:
         logger.error("Please ensure Firefox is installed and has been run at least once.")
         return
 
-    logger.info("Found Firefox profile: %s", profile_dir)
+    logger.debug("Found Firefox profile: %s", profile_dir)
 
     # Install the userChrome.css file
     if install_css(profile_dir, source_css):
-        logger.info("Installation completed successfully!")
-        logger.info("Make sure you also set the necessary about:config values:")
-        logger.info("  - toolkit.legacyUserProfileCustomizations.stylesheets = true")
-        logger.info("  - widget.macos.native-context-menus = false (on macOS)")
+        logger.info("\nInstallation completed successfully!")
+        logger.debug("\nMake sure you also set the necessary about:config values:")
+        logger.debug("  - toolkit.legacyUserProfileCustomizations.stylesheets = true")
+        logger.debug("  - widget.macos.native-context-menus = false")
         return
 
     logger.error("Installation failed!")
