@@ -1,0 +1,23 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#context_bookmarkTab,
+#context_closeTabOptions,
+#context_moveTabOptions,
+#context_playSelectedTabs,
+#context_playTab,
+#context_selectAllTabs,
+#context_toggleMuteSelectedTabs,
+#context_toggleMuteTab,
+#context_undoCloseTab,
+#context_unloadTab,
+#context-bookmarklink,
+#context-inspect-a11y,
+#context-previewlink,
+#context-selectall,
+#context-sendimage,
+#context-sep-setbackground,
+#context-setDesktopBackground,
+#context-translate-selection,
+#tab-context-share-url {
+    display: none !important;
+}
