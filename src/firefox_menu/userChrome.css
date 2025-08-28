@@ -18,6 +18,8 @@
 #context-sep-setbackground,
 #context-setDesktopBackground,
 #context-translate-selection,
-#tab-context-share-url {
+#share-tab-url-item,
+#tab-context-share-url,
+menu[data-l10n-id="tab-context-share-url"] {
     display: none !important;
 }
