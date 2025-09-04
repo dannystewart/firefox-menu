@@ -89,14 +89,14 @@ def main() -> None:
 
     # Install the userChrome.css file
     if install_css(profile_dir, source_css):
-        logger.info("\nInstallation completed successfully!")
-        logger.debug("\nMake sure you also set the necessary about:config values:")
+        logger.debug("Don't forget to set the about:config settings:")
         logger.debug("  - toolkit.legacyUserProfileCustomizations.stylesheets = true")
         if platform.system() == "Darwin":
             logger.debug("  - widget.macos.native-context-menus = false")
+        logger.info("\nFirefox userChrome.css updated successfully!")
         return
 
-    logger.error("Installation failed!")
+    logger.error("Update failed.")
 
 
 if __name__ == "__main__":

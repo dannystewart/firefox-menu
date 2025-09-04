@@ -1,6 +1,6 @@
 [project]
 name = "firefox-menu"
-version = "0.1.0"
+version = "0.1.1"
 description = "Configure Firefox context menu entries"
 license = "MIT"
 authors = [{ name = "Danny Stewart", email = "danny@stewart.cc" }]
