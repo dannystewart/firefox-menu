@@ -12,14 +12,17 @@
 #context_unloadTab,
 #context-bookmarklink,
 #context-inspect-a11y,
+#context-media-eme-separator,
 #context-previewlink,
 #context-selectall,
 #context-sendimage,
 #context-sep-setbackground,
+#context-sep-sharing,
 #context-setDesktopBackground,
 #context-translate-selection,
 #share-tab-url-item,
 #tab-context-share-url,
+#tabContextMenu #context_selectAllTabs+menuseparator,
 menu[data-l10n-id="tab-context-share-url"] {
     display: none !important;
 }
